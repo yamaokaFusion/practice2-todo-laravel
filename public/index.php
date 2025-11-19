@@ -18,3 +18,20 @@ require __DIR__.'/../vendor/autoload.php';
 $app = require_once __DIR__.'/../bootstrap/app.php';
 
 $app->handleRequest(Request::capture());
+
+/**
+ * 上から記載されている関数やその処理をまとめる
+ * 
+ * 3.
+ * ＝
+ * 
+ * 4.
+ * ＝
+ * 
+ * 6.define('LARAVEL_START', microtime(true));
+ * ＝ 定数を定義してます。定数名を最初に、その次に値を設定し、定数を定義します。
+ * 　 今回はLARAVEL_STARTを名前として、タイムスタンプとミリ秒を取得し、値とします。
+ * 
+ * 9.
+ * ＝
+ */
