@@ -8,6 +8,26 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// 未ログインで "/" アクセスされたら /login に飛ばす
+Route::get('/', function () {
+    return redirect('/login');
+});
+
+// Breeze が生成した Dashboard（ログイン後トップ）
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+
+    // 投稿一覧
+    Route::get('/posts', function () {
+        return view('posts.index');
+    })->name('posts.index');
+});
+
+// Breeze の認証ルート
+require __DIR__.'/auth.php';
+
 // ログイン必須ページ
 Route::middleware(['auth'])->group(function () {
 
